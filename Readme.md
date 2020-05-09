@@ -420,11 +420,423 @@ Trailers
 Wagons
 ------
 
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png "GET request")   __api/Wagons__ 
+### request parameters:
+  - __none__
+### responce body:
+ - code:200
+```yaml
+[
+  {
+    "id": 2,
+    "trailerId": 2,
+    "trailer": null,
+    "driversWagons": []
+  },
+  {
+    "id": 4,
+    "trailerId": 4,
+    "trailer": null,
+    "driversWagons": []
+  }
+]
+```
+![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/Wagons__ 
+### request parameters:
+  - __request body:__
+```yaml
+  {
+    "trailerId": 4,
+    "trailer": null,
+    "driversWagons": []
+  }
+```  
+### responce body: 
+ - code:201
+```yaml
+{
+  "id": 6,
+  "trailerId": 4,
+  "trailer": null,
+  "driversWagons": []
+}
+```
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png  "GET request") __/api/Wagons/{id}__ 
+### request parameters:
+  - __id - 2__
+### responce body:
+ - code:200
+```yaml
+{
+  "id": 2,
+  "trailerId": 2,
+  "trailer": null,
+  "driversWagons": []
+}
+```
+![PUT:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/PUT.png "PUT request") __/api/Wagons/{id}__ 
+### request parameters:
+  - __id - 2__
+  - __request body:__
+
+```yaml
+{
+  "id": 2,
+  "trailerId": 4,
+  "trailer": null,
+  "driversWagons": []
+}
+```
+### responce body:
+ - code:204
+```yaml
+```
+![DELETE:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png  "DELETE request") __/api/Wagons/{id}__ 
+
+### request parameters:
+ - id - 2
+### responce body:
+ - code:200
+```yaml
+{
+  "id": 2,
+  "trailerId": 4,
+  "trailer": null,
+  "driversWagons": []
+}
+```
 Drivers
 ------
 
-DriversWagons
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png "GET request")   __api/Drivers__ 
+### request parameters:
+  - __none__
+### responce body:
+ - code:200
+```yaml
+[
+  {
+    "id": 1,
+    "fullName": "Pupkin Vasyl Ivanovich",
+    "passportNum": "AB123456",
+    "driverLicenseNum": "K12lk31233AA",
+    "adrCertificate": true,
+    "driversWagons": []
+  },
+  {
+    "id": 2,
+    "fullName": "John Trevis",
+    "passportNum": "KSA12345678",
+    "driverLicenseNum": "K22221233AA",
+    "adrCertificate": false,
+    "driversWagons": []
+  },
+  {
+    "id": 3,
+    "fullName": "Grigoriev Inokentyi Pavlovich",
+    "passportNum": "AB760760",
+    "driverLicenseNum": "K13lk31233AB",
+    "adrCertificate": false,
+    "driversWagons": []
+  },
+  {
+    "id": 4,
+    "fullName": "Miziakina Alla Valentynivna",
+    "passportNum": "AC808678",
+    "driverLicenseNum": "K34lL31267AA",
+    "adrCertificate": true,
+    "driversWagons": []
+  }
+]
+```
+![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/Drivers__ 
+### request parameters:
+  - __request body:__
+```yaml
+{
+	"fullName": "Krykosk Yurii Andriyovych",
+	"passportNum": "AC828678",
+	"driverLicenseNum": "K34lL31267AA",
+	"adrCertificate": true,
+	"driversWagons": []
+}
+```  
+### responce body: 
+ - code:201
+```yaml
+{
+  "id": 7,
+  "fullName": "Krykosk Yurii Andriyovych",
+  "passportNum": "AC828678",
+  "driverLicenseNum": "K34lL31267AA",
+  "adrCertificate": true,
+  "driversWagons": []
+}
+```
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png  "GET request") __/api/Drivers/{id}__ 
+### request parameters:
+  - __id - 7__
+### responce body:
+ - code:200
+```yaml
+{
+  "id": 7,
+  "fullName": "Krykosk Yurii Andriyovych",
+  "passportNum": "AC828678",
+  "driverLicenseNum": "K34lL31267AA",
+  "adrCertificate": true,
+  "driversWagons": []
+}
+```
+![PUT:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/PUT.png "PUT request") __/api/Drivers/{id}__ 
+### request parameters:
+  - __id - 7__
+  - __request body:__
+
+```yaml
+{
+  "id": 7,
+  "fullName": "no name",
+  "passportNum": " ",
+  "driverLicenseNum": " ",
+  "adrCertificate": false,
+  "driversWagons": []
+}
+```
+### responce body:
+ - code:204
+```yaml
+```
+![DELETE:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png  "DELETE request") __/api/Drivers/{id}__ 
+
+### request parameters:
+ - id - 7
+### responce body:
+ - code:200
+```yaml
+{
+  "id": 7,
+  "fullName": "no name",
+  "passportNum": " ",
+  "driverLicenseNum": " ",
+  "adrCertificate": false,
+  "driversWagons": []
+}
+```
+Drivers Wagons
 ------
 
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png "GET request")   __api/DriversWagons__ 
+### request parameters:
+  - __none__
+### responce body:
+ - code:200
+```yaml
+[
+  {
+    "id": 20,
+    "driverId": 6,
+    "wagonId": 4,
+    "wagon": null,
+    "driver": null,
+    "deliveries": []
+  }
+]
+```
+![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/DriversWagons__ 
+### request parameters:
+  - __request body:__
+```yaml
+{
+    "driverId": 6,
+    "wagonId": 4,
+    "wagon": null,
+    "driver": null,
+    "deliveries": []
+}
+```  
+### responce body: 
+ - code:201
+```yaml
+{
+  "id": 43,
+  "driverId": 6,
+  "wagonId": 4,
+  "wagon": null,
+  "driver": null,
+  "deliveries": []
+}
+```
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png  "GET request") __/api/DriversWagons/{id}__ 
+### request parameters:
+  - __id - 43__
+### responce body:
+ - code:200
+```yaml
+{
+  "id": 43,
+  "driverId": 6,
+  "wagonId": 4,
+  "wagon": null,
+  "driver": null,
+  "deliveries": []
+}
+```
+![PUT:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/PUT.png "PUT request") __/api/DriversWagons/{id}__ 
+### request parameters:
+  - __id - 43__
+  - __request body:__
+
+```yaml
+{
+  "id": 43,
+  "driverId": 5,
+  "wagonId": 4,
+  "wagon": null,
+  "driver": null,
+  "deliveries": []
+}
+```
+### responce body:
+ - code:204
+```yaml
+```
+![DELETE:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png  "DELETE request") __/api/DriversWagons/{id}__ 
+
+### request parameters:
+ - id - 43
+### responce body:
+ - code:200
+```yaml
+{
+  "id": 43,
+  "driverId": 5,
+  "wagonId": 4,
+  "wagon": null,
+  "driver": null,
+  "deliveries": []
+}
+```
 Deliveries
 ------
+
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png "GET request")   __api/Deliveries__ 
+### request parameters:
+  - __none__
+### responce body:
+ - code:200
+```yaml
+[
+  {
+    "id": 201,
+    "driverWagonId": 20,
+    "customerCompanyId": 2,
+    "loadId": 1,
+    "unloadDate": "2020-04-03T12:00:10",
+    "address": "Miska street 23/2",
+    "driverWagon": null,
+    "load": null,
+    "customerCompany": null
+  },
+  {
+    "id": 202,
+    "driverWagonId": 20,
+    "customerCompanyId": 2,
+    "loadId": 3,
+    "unloadDate": "2020-05-03T12:00:10",
+    "address": "Samsoneko street 2",
+    "driverWagon": null,
+    "load": null,
+    "customerCompany": null
+  }
+]
+```
+![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/Deliveries__ 
+### request parameters:
+  - __request body:__
+```yaml
+  {
+    "driverWagonId": 20,
+    "customerCompanyId": 2,
+    "loadId": 1,
+    "unloadDate": "2021-04-03T12:00:10",
+    "address": "M street 23/2",
+    "driverWagon": null,
+    "load": null,
+    "customerCompany": null
+  }
+```  
+### responce body: 
+ - code:201
+```yaml
+{
+  "id": 207,
+  "driverWagonId": 20,
+  "customerCompanyId": 2,
+  "loadId": 1,
+  "unloadDate": "2021-04-03T12:00:10",
+  "address": "M street 23/2",
+  "driverWagon": null,
+  "load": null,
+  "customerCompany": null
+}
+```
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png  "GET request") __/api/Deliveries/{id}__ 
+### request parameters:
+  - __id - 207__
+### responce body:
+ - code:200
+```yaml
+{
+  "id": 207,
+  "driverWagonId": 20,
+  "customerCompanyId": 2,
+  "loadId": 1,
+  "unloadDate": "2021-04-03T12:00:10",
+  "address": "M street 23/2",
+  "driverWagon": null,
+  "load": null,
+  "customerCompany": null
+}
+```
+![PUT:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/PUT.png "PUT request") __/api/Deliveries/{id}__ 
+### request parameters:
+  - __id - 207__
+  - __request body:__
+
+```yaml
+{
+  "id": 207,
+  "driverWagonId": 20,
+  "customerCompanyId": 2,
+  "loadId": 1,
+  "unloadDate": "2020-04-03T12:00:10",
+  "address": "M street 23/2",
+  "driverWagon": null,
+  "load": null,
+  "customerCompany": null
+}
+```
+### responce body:
+ - code:204
+```yaml
+```
+![DELETE:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png  "DELETE request") __/api/Deliveries/{id}__ 
+
+### request parameters:
+ - id - 207
+### responce body:
+ - code:200
+```yaml
+{
+  "id": 207,
+  "driverWagonId": 20,
+  "customerCompanyId": 2,
+  "loadId": 1,
+  "unloadDate": "2020-04-03T12:00:10",
+  "address": "M street 23/2",
+  "driverWagon": null,
+  "load": null,
+  "customerCompany": null
+}
+```
