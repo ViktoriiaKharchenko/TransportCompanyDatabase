@@ -7,7 +7,7 @@ Trailer Types
 ### request parameters:
   - __none__
 ### responce body:
-```json
+```yaml
 [
   {
     "id": 1,
