@@ -34,14 +34,14 @@ Trailer Types
 ![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/TrailerTypes__ 
 ### request parameters:
   - __request body:__
-```java
+```yaml
 {
   "type": "some trailers",
   "trailers": []
 }
 ```  
 ### responce body:
-```javascript
+```yaml
 {
   "id": 22,
   "type": "some trailers",
@@ -52,7 +52,7 @@ Trailer Types
 ### request parameters:
   - __id - 2__
 ### responce body:
-```json
+```yaml
 {
   "id": 2,
   "type": "Refrigerated Trailers",
@@ -64,7 +64,7 @@ Trailer Types
   - id - 22
   - __request body:__
 
-```c++
+```yaml
 {
   "id": 22,
   "type": "Big one 2",
@@ -72,7 +72,7 @@ Trailer Types
 }
 ```
 ### responce body:
-```json
+```yaml
 ```
 ![DELETE:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png  "DELETE request") __/api/TrailerTypes/{id}__ 
 
@@ -80,7 +80,7 @@ Trailer Types
   - id - 1
 ### responce body:
 
-```python
+```yaml
 {
   "id": 1,
   "type": "Flatbed Trailers",
@@ -96,7 +96,7 @@ Customer Companies
   - __none__
 ### responce body:
  - code:200
-```json
+```yaml
 [
   {
     "id": 1,
@@ -127,7 +127,7 @@ Customer Companies
 ![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/CustomerCompanies__ 
 ### request parameters:
   - __request body:__
-```java
+```yaml
 {
     "companyName": "Company Name",
     "documentNum": "doc num 10",
@@ -136,7 +136,7 @@ Customer Companies
 ```  
 ### responce body: 
  - code:201
-```javascript
+```yaml
 {
   "id": 9,
   "companyName": "Company Name",
@@ -149,7 +149,7 @@ Customer Companies
   - __id - 4__
 ### responce body:
  - code:200
-```json
+```yaml
 {
   "id": 4,
   "companyName": "Boss corp",
@@ -162,7 +162,7 @@ Customer Companies
   - id - 3
   - __request body:__
 
-```c++
+```yaml
 {
   "id": 3,
   "companyName": "Kritical Corp",
@@ -172,7 +172,7 @@ Customer Companies
 ```
 ### responce body:
  - code:204
-```json
+```yaml
 ```
 ![DELETE:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png  "DELETE request") __/api/CustomerCompanies/{id}__ 
 
@@ -180,7 +180,7 @@ Customer Companies
   - id - 3
 ### responce body:
  - code:200
-```python
+```yaml
 {
   "id": 3,
   "companyName": "Kritical Corp",
@@ -196,7 +196,7 @@ Loads
   - __none__
 ### responce body:
  - code:200
-```json
+```yaml
 [
   {
     "id": 1,
@@ -235,7 +235,7 @@ Loads
 ![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/Loads__ 
 ### request parameters:
   - __request body:__
-```java
+```yaml
  {
     "uploadDate": "2021-01-01T00:00:00",
     "address": "Khreschatyk street 18",
@@ -246,7 +246,7 @@ Loads
 ```  
 ### responce body: 
  - code:201
-```javascript
+```yaml
 {
   "id": 5,
   "uploadDate": "2021-01-01T00:00:00",
@@ -261,7 +261,7 @@ Loads
   - __id - 5__
 ### responce body:
  - code:200
-```json
+```yaml
 {
   "id": 5,
   "uploadDate": "2021-01-01T00:00:00",
@@ -276,7 +276,7 @@ Loads
   - id - 5
   - __request body:__
 
-```xml
+```yaml
 {
   "id": 5,
   "uploadDate": "2022-01-01T00:00:00",
@@ -288,7 +288,7 @@ Loads
 ```
 ### responce body:
  - code:204
-```json
+```yaml
 ```
 ![DELETE:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png  "DELETE request") __/api/Loads/{id}__ 
 
@@ -296,7 +296,7 @@ Loads
   - id - 5
 ### responce body:
  - code:200
-```Perl
+```yaml
 {
   "id": 5,
   "uploadDate": "2022-01-01T00:00:00",
@@ -305,11 +305,118 @@ Loads
   "requireADR": true,
   "deliveries": []
 }
-
 ```
 Trailers
 ------
 
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png "GET request")   __api/Trailers__ 
+### request parameters:
+  - __none__
+### responce body:
+ - code:200
+```yaml
+[
+  {
+    "id": 1,
+    "volume": 25,
+    "carryingCapacity": 15,
+    "trailerTypeId": 8,
+    "trailerType": null,
+    "wagons": []
+  },
+  {
+    "id": 2,
+    "volume": 20,
+    "carryingCapacity": 10,
+    "trailerTypeId": 2,
+    "trailerType": null,
+    "wagons": []
+  },
+  {
+    "id": 4,
+    "volume": 20,
+    "carryingCapacity": 10,
+    "trailerTypeId": 8,
+    "trailerType": null,
+    "wagons": []
+  }
+]
+```
+![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/Trailers__ 
+### request parameters:
+  - __request body:__
+```yaml
+ {
+    "volume": 19,
+    "carryingCapacity": 9,
+    "trailerTypeId": 8,
+    "trailerType": null,
+    "wagons": []
+ }
+```  
+### responce body: 
+ - code:201
+```yaml
+{
+  "id": 5,
+  "volume": 19,
+  "carryingCapacity": 9,
+  "trailerTypeId": 8,
+  "trailerType": null,
+  "wagons": []
+}
+```
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png  "GET request") __/api/Trailers/{id}__ 
+### request parameters:
+  - __id - 1__
+### responce body:
+ - code:200
+```yaml
+{
+  "id": 1,
+  "volume": 25,
+  "carryingCapacity": 15,
+  "trailerTypeId": 8,
+  "trailerType": null,
+  "wagons": []
+}
+```
+![PUT:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/PUT.png "PUT request") __/api/Trailers/{id}__ 
+### request parameters:
+  - __id - 1__
+  - __request body:__
+
+```yaml
+{
+  "id": 1,
+  "volume": 5,
+  "carryingCapacity": 1,
+  "trailerTypeId": 2,
+  "trailerType": null,
+  "wagons": []
+}
+```
+### responce body:
+ - code:204
+```yaml
+```
+![DELETE:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png  "DELETE request") __/api/Trailers/{id}__ 
+
+### request parameters:
+ - id - 1
+### responce body:
+ - code:200
+```yaml
+{
+  "id": 1,
+  "volume": 5,
+  "carryingCapacity": 1,
+  "trailerTypeId": 2,
+  "trailerType": null,
+  "wagons": []
+  "deliveries": []
+}
+```
 Wagons
 ------
 
