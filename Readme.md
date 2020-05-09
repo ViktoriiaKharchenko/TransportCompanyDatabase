@@ -2,10 +2,13 @@
 
 Trailer Types
 ------
+
 ![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png "GET request")   __/api/TrailerTypes__ 
+
 ### request parameters:
   - none
 ### responce:
+
 ```json
 [
   {
@@ -30,11 +33,34 @@ Trailer Types
   }
 ]
 ```
+
 ![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/TrailerTypes__ 
+### request parameters:
+  - __id - 2__
+  - __request body:__
+
+```java
+{
+  "type": "some trailers",
+  "trailers": []
+}
+```
+  
+### responce:
+
+```javascript
+{
+  "id": 22,
+  "type": "some trailers",
+  "trailers": []
+}
+```
+  
 ![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png  "GET request") __/api/TrailerTypes/{id}__ 
+
 ### request parameters:
   - id - 2
-### responce:
+### responce body:
 ```json
 {
   "id": 2,
@@ -42,8 +68,35 @@ Trailer Types
   "trailers": []
 }
 ```
+
 ![PUT:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/PUT.png "PUT request") __/api/TrailerTypes/{id}__ 
+### request parameters:
+  - id - 22
+  - __request body:__
+
+```java
+{
+  "type": "some trailers",
+  "trailers": []
+}
+```
+### responce body:
+```json
+```
 ![DELETE:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png  "DELETE request") __/api/TrailerTypes/{id}__ 
+
+### request parameters:
+  - id - 1
+### responce body:
+
+```json
+{
+  "id": 1,
+  "type": "Flatbed Trailers",
+  "trailers": []
+}
+```
+
 Customer Companies
 ------
 
