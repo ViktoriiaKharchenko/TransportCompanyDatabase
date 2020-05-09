@@ -2,7 +2,7 @@
 
 Trailer Types
 ------
-![GET:]("https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png")   __/api/TrailerTypes__ 
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png "GET request")   __/api/TrailerTypes__ 
 ### request parameters:
   - none
 ### responce:
@@ -30,8 +30,8 @@ Trailer Types
   }
 ]
 ```
-![POST:]("https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png") __/api/TrailerTypes__ 
-![GET:]("https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png"") __/api/TrailerTypes/{id}__ 
+![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/TrailerTypes__ 
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png  "GET request") __/api/TrailerTypes/{id}__ 
 ### request parameters:
   - id - 2
 ### responce:
@@ -42,8 +42,8 @@ Trailer Types
   "trailers": []
 }
 ```
-![PUT:]("https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/PUT.png") __/api/TrailerTypes/{id}__ 
-![DELETE:]("https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png") __/api/TrailerTypes/{id}__ 
+![PUT:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/PUT.png "PUT request") __/api/TrailerTypes/{id}__ 
+![DELETE:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png  "DELETE request") __/api/TrailerTypes/{id}__ 
 Customer Companies
 ------
 
