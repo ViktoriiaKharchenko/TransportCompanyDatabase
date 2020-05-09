@@ -33,7 +33,6 @@ Trailer Types
 ```
 ![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/TrailerTypes__ 
 ### request parameters:
-  - __id - 2__
   - __request body:__
 ```java
 {
@@ -90,7 +89,7 @@ Trailer Types
 ```
 
 Customer Companies
-=====
+-----
 
 ![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png "GET request")   __api/CustomerCompanies__ 
 ### request parameters:
@@ -123,11 +122,10 @@ Customer Companies
     "documentNum": "doc num 4",
     "deliveries": []
   }
-}
+]
 ```
 ![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/CustomerCompanies__ 
 ### request parameters:
-  - __id - 2__
   - __request body:__
 ```java
 {
@@ -193,6 +191,122 @@ Customer Companies
 Loads
 ------
 
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png "GET request")   __api/Loads__ 
+### request parameters:
+  - __none__
+### responce body:
+ - code:200
+```json
+[
+  {
+    "id": 1,
+    "uploadDate": "2020-04-01T12:12:00",
+    "address": "Fisk street 7a",
+    "cargoName": "Food ",
+    "requireADR": false,
+    "deliveries": []
+  },
+  {
+    "id": 2,
+    "uploadDate": "2020-04-11T09:33:32",
+    "address": "Karasin street 18",
+    "cargoName": "Fuel ",
+    "requireADR": true,
+    "deliveries": []
+  },
+  {
+    "id": 3,
+    "uploadDate": "2020-04-19T15:09:45",
+    "address": "Fisk street 7a",
+    "cargoName": "Vegetables ",
+    "requireADR": false,
+    "deliveries": []
+  },
+  {
+    "id": 4,
+    "uploadDate": "2020-05-02T01:54:10",
+    "address": "Karasin street 18",
+    "cargoName": "Gas ",
+    "requireADR": true,
+    "deliveries": []
+  }
+]
+```
+![POST:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/POST.png "POST request") __/api/Loads__ 
+### request parameters:
+  - __request body:__
+```java
+ {
+    "uploadDate": "2021-01-01T00:00:00",
+    "address": "Khreschatyk street 18",
+    "cargoName": "Food ",
+    "requireADR": false,
+    "deliveries": []
+ }
+```  
+### responce body: 
+ - code:201
+```javascript
+{
+  "id": 5,
+  "uploadDate": "2021-01-01T00:00:00",
+  "address": "Khreschatyk street 18",
+  "cargoName": "Food ",
+  "requireADR": false,
+  "deliveries": []
+}
+```
+![GET:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/GET.png  "GET request") __/api/Loads/{id}__ 
+### request parameters:
+  - __id - 5__
+### responce body:
+ - code:200
+```json
+{
+  "id": 5,
+  "uploadDate": "2021-01-01T00:00:00",
+  "address": "Khreschatyk street 18",
+  "cargoName": "Food ",
+  "requireADR": false,
+  "deliveries": []
+}
+```
+![PUT:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/PUT.png "PUT request") __/api/Loads/{id}__ 
+### request parameters:
+  - id - 5
+  - __request body:__
+
+```xml
+{
+  "id": 5,
+  "uploadDate": "2022-01-01T00:00:00",
+  "address": "Khreschatyk street 19",
+  "cargoName": "not Food ",
+  "requireADR": true,
+  "deliveries": []
+}
+```
+### responce body:
+ - code:204
+```json
+```
+![DELETE:](https://github.com/ViktoriiaKharchenko/TransportCompanyDatabase/blob/master/images/DELETE.png  "DELETE request") __/api/Loads/{id}__ 
+
+### request parameters:
+  - id - 5
+### responce body:
+ - code:200
+```python
+{
+  "id": 5,
+  "uploadDate": "2022-01-01T00:00:00",
+  "address": "Khreschatyk street 19",
+  "cargoName": "not Food ",
+  "requireADR": true,
+  "deliveries": []
+}
+
+```
 Trailers
 ------
 
