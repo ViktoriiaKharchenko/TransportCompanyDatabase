@@ -146,4 +146,11 @@ C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\net
 C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\Moq.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\obj\Debug\netcoreapp3.1\TransportCompanyApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\obj\Debug\netcoreapp3.1\TransportCompanyApp.MvcApplicationPartsAssemblyInfo.cache

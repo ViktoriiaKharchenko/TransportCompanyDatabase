@@ -24,14 +24,14 @@ namespace TransportCompanyApp.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Wagon>>> GetWagons()
         {
-            return await _context.Wagons.ToListAsync();
+            return await _context.Wagons.Include(b => b.Trailer).ThenInclude(c => c.TrailerType).ToListAsync();
         }
 
         // GET: api/Wagons/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Wagon>> GetWagon(int id)
         {
-            var wagon = await _context.Wagons.FindAsync(id);
+            var wagon = await _context.Wagons.Where(b=>b.Id == id).Include(b => b.Trailer).ThenInclude(c => c.TrailerType).FirstAsync();
 
             if (wagon == null)
             {
@@ -51,7 +51,19 @@ namespace TransportCompanyApp.Controllers
             {
                 return BadRequest();
             }
-
+            if (wagon.WagonNum != null)
+            {
+                NumValid(wagon);
+            }
+            var trailer = _context.Trailers.Find(wagon.TrailerId);
+            if(trailer == null)
+            {
+                ModelState.AddModelError("TrailerId", "Не вірно вказаний причіп");
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             _context.Entry(wagon).State = EntityState.Modified;
 
             try
@@ -79,6 +91,21 @@ namespace TransportCompanyApp.Controllers
         [HttpPost]
         public async Task<ActionResult<Wagon>> PostWagon(Wagon wagon)
         {
+            if (wagon.WagonNum != null)
+            {
+                NumValid(wagon);
+            }
+
+            var trailer = _context.Trailers.Find(wagon.TrailerId);
+            if (trailer == null)
+            {
+                ModelState.AddModelError("TrailerId", "Не вірно вказаний причіп");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             _context.Wagons.Add(wagon);
             await _context.SaveChangesAsync();
 
@@ -101,6 +128,47 @@ namespace TransportCompanyApp.Controllers
             return wagon;
         }
 
+        public void NumValid(Wagon wagon)
+        {
+            if (wagon.WagonNum.Length < 8) ModelState.AddModelError("WagonNum", "Номер фури занадто которкий");
+            if (wagon.WagonNum.Length > 8) ModelState.AddModelError("WagonNum", "Номер фури занадто довгий");
+            if (wagon.WagonNum.Length == 8)
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    if (wagon.WagonNum[i] < 'A' || wagon.WagonNum[i] > 'Z')
+                    {
+                        ModelState.AddModelError("WagonNum", "Невірний формат данних");
+                        break;
+                    }
+                }
+                if (ModelState.IsValid)
+                {
+                    for (int i = 2; i < wagon.WagonNum.Length-2; i++)
+                    {
+                        if (wagon.WagonNum[i] < '0' || wagon.WagonNum[i] > '9')
+                        {
+                            ModelState.AddModelError("WagonNum", "Невірний формат данних");
+                            break;
+                        }
+                    }
+                    if (ModelState.IsValid)
+                    {
+
+                        for (int i = 6; i < 8; i++)
+                        {
+                            if (wagon.WagonNum[i] < 'A' || wagon.WagonNum[i] > 'Z')
+                            {
+                                ModelState.AddModelError("WagonNum", "Невірний формат данних");
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            var pas = _context.Wagons.Where(b => b.WagonNum == wagon.WagonNum).Where(b => b.Id != wagon.Id);
+            if (pas.Count() > 0) { ModelState.AddModelError("WagonNum", "Фура з таким номером вже зареєстрована в базі"); }
+        }
         private bool WagonExists(int id)
         {
             return _context.Wagons.Any(e => e.Id == id);

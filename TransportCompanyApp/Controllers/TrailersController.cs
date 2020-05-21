@@ -24,6 +24,7 @@ namespace TransportCompanyApp.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Trailer>>> GetTrailers()
         {
+
             return await _context.Trailers.ToListAsync();
         }
 
@@ -50,6 +51,15 @@ namespace TransportCompanyApp.Controllers
             if (id != trailer.Id)
             {
                 return BadRequest();
+            }
+            var trailerType = _context.TrailerTypes.Find(trailer.TrailerTypeId);
+            if (trailerType == null)
+            {
+                ModelState.AddModelError("TrailerTypeId", "Не вірно вказаний тип причіпу");
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
             }
 
             _context.Entry(trailer).State = EntityState.Modified;
@@ -79,6 +89,15 @@ namespace TransportCompanyApp.Controllers
         [HttpPost]
         public async Task<ActionResult<Trailer>> PostTrailer(Trailer trailer)
         {
+            var trailerType = _context.TrailerTypes.Find(trailer.TrailerTypeId);
+            if (trailerType == null)
+            {
+                ModelState.AddModelError("TrailerTypeId", "Не вірно вказаний тип причіпу");
+            }
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             _context.Trailers.Add(trailer);
             await _context.SaveChangesAsync();
 
@@ -101,6 +120,14 @@ namespace TransportCompanyApp.Controllers
             return trailer;
         }
 
+        // GET: api/FreeTrailers
+        [HttpGet("free")]
+        public async Task<ActionResult<IEnumerable<Trailer>>> GetFreeTrailers()
+        {
+            var freeTrailers = await _context.Set<Trailer>().FromSqlRaw(@"SELECT t.* FROM Trailers t Where t.Id NOT IN(
+                Select w.TrailerId From Wagons w )").Include(b=>b.TrailerType).ToListAsync();
+            return freeTrailers;
+        }
         private bool TrailerExists(int id)
         {
             return _context.Trailers.Any(e => e.Id == id);

@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="css/Style.css" />
+    <link href="lib/bootstrap/dist/css/bootstrap_flatly.min.css" rel="stylesheet" />
+    
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <div id="title">TransportInc</div>
+            <div id="buttons">
+                <a href="index.html" class="button1">
+                    <span>Водії</span>
+                    <div class="line"></div>
+                </a>
+                <a href="Wagons.html" class="button1">
+                    <span>Фури</span>
+                    <div class="line"></div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <h1>Водії</h1>
+        </div>
+        <br />
+        
+        <div class="row">
+            <div class="col-md-6">
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#addDriver" aria-expanded="false"
+                        aria-controls="addDriver">
+                    Додати водія
+                </button>
+            </div>
+        </div>
+        <br />
+        <div class="row collapse" id="addDriver">
+            <!--<div class="col-md-3"></div>-->
+            <div class="col-md-6">
+
+                <form action="javascript:void(0);" method="POST" onsubmit="addDriver()">
+                    <div class="form-group">
+                        <label>Ім'я</label>
+                        <input type="text" id="add-name" class="form-control" placeholder="Повне ім'я" />
+                        <div id="name-invalid"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Номер паспорту</label>
+                        <input type="text" id="add-passport" class="form-control" placeholder="Номер паспорту" />
+                        <div id="passport-invalid"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Номер прав</label>
+                        <input type="text" id="add-license" class="form-control" placeholder="Номер прав" />
+                        <div id="license-invalid"></div>
+                    </div>
+                    <div class="custom-control custom-checkbox checkbox-lg">
+                        <input type="checkbox" class="custom-control-input" id="ADR" checked="">
+                        <label class="custom-control-label" for="ADR">ADR Certificate</label>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-primary">Додати</button>
+
+                </form>
+            </div>
+            <!--<div class="col-md-3"></div>-->
+        </div>
+        <br />
+
+        <div class="row collapse" id="editDriver">
+            <!--<div class="col-md-3"></div>-->
+            <div class="col-md-6">
+                <form action="javascript:void(0);" method="POST" onsubmit="updateDriver()">
+                    <input type="hidden" id="edit-id">
+                    <div class="form-group">
+                        <label>Ім'я</label>
+                        <input type="text" id="edit-name" class="form-control" />
+                        <div id="edit-name-invalid"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Номер паспорту</label>
+                        <input type="text" id="edit-passport" class="form-control" />
+                        <div id="edit-passport-invalid"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Номер прав</label>
+                        <input type="text" id="edit-license" class="form-control" placeholder="Номер прав" />
+                        <div id="edit-license-invalid"></div>
+                    </div>
+                    <div class="custom-control custom-checkbox checkbox-lg">
+                        <input type="checkbox" class="custom-control-input" id="edit-ADR" checked="">
+                        <label class="custom-control-label" for="edit-ADR">ADR Certificate</label>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-primary">Зберегти</button>
+                    <a onclick="closeInput()" aria-label="Close" &#10006;></a>
+                </form>
+            </div>
+            <!--<div class="col-md-3"></div>-->
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p id="counter"></p>
+                <table class="table">
+                    <tr class="table-primary">
+                        <th>Ім'я</th>
+                        <th>Номер паспорта</th>
+                        <th>Номер прав</th>
+                        <th>ADR</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tbody class="table-light" id="drivers"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+            <script src="js/lab2.js" asp-append-version="true"></script>
+            <script type="text/javascript">
+                getDrivers();
+            </script>
+</body>
+</html>
