@@ -22,8 +22,10 @@ namespace TransportCompanyApp
         {
 
             string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddScoped<IRepository, TransportCompanyDatabaseContext>();
             services.AddDbContext<TransportCompanyDatabaseContext>(options => options.UseSqlServer(connection));
             services.AddControllers();
+
    
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -53,6 +55,7 @@ namespace TransportCompanyApp
                 endpoints.MapControllers();
             });
         }
+
     }
 }
 

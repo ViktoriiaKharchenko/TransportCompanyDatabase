@@ -9,8 +9,6 @@ namespace TransportCompanyApp.Models
 {
     public class Wagon
     {
-        internal Wagon wagon;
-
         public Wagon(){
             DriversWagons = new List<DriversWagons>();
         }

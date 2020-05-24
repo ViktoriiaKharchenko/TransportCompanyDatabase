@@ -152,5 +152,8 @@ C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\net
 C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\Moq.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\obj\Debug\netcoreapp3.1\TransportCompanyApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Boss\source\repos\TransportCompanyApp\TransportCompanyApp\obj\Debug\netcoreapp3.1\TransportCompanyApp.MvcApplicationPartsAssemblyInfo.cache

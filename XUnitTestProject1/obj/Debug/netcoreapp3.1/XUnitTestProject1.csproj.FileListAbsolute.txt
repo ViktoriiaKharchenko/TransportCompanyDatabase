@@ -3,8 +3,6 @@ C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netco
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\TransportCompanyApp.exe
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
-C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
-C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\XUnitTestProject1.deps.json
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\XUnitTestProject1.runtimeconfig.json
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\XUnitTestProject1.runtimeconfig.dev.json
@@ -76,7 +74,6 @@ C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netco
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\System.Text.Json.dll
-C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\xunit.assert.dll
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\xunit.core.dll
@@ -227,3 +224,15 @@ C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\obj\Debug\netco
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\obj\Debug\netcoreapp3.1\XUnitTestProject1.AssemblyInfoInputs.cache
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\obj\Debug\netcoreapp3.1\XUnitTestProject1.AssemblyInfo.cs
 C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\obj\Debug\netcoreapp3.1\XUnitTestProject1.csproj.CopyComplete
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\XUnitTestProject1.pdb
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\Moq.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\obj\Debug\netcoreapp3.1\XUnitTestProject1.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\obj\Debug\netcoreapp3.1\XUnitTestProject1.pdb
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\XUnitTestProject1.exe
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\testhost.exe
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\Boss\source\repos\TransportCompanyApp\XUnitTestProject1\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll

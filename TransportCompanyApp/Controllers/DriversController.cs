@@ -13,9 +13,9 @@ namespace TransportCompanyApp.Controllers
     [ApiController]
     public class DriversController : ControllerBase
     {
-        private readonly TransportCompanyDatabaseContext _context;
+        private readonly IRepository _context ;
 
-        public DriversController(TransportCompanyDatabaseContext context)
+        public DriversController(IRepository context)
         {
             _context = context;
         }
@@ -67,11 +67,11 @@ namespace TransportCompanyApp.Controllers
             {
                 return BadRequest(ModelState);
             }
-            _context.Entry(driver).State = EntityState.Modified;
 
+            _context.MarkAsModified<Driver>(driver);
             try
             {
-                await _context.SaveChangesAsync();
+                await _context.Save();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -112,7 +112,7 @@ namespace TransportCompanyApp.Controllers
             }
 
             _context.Drivers.Add(driver);
-            await _context.SaveChangesAsync();
+            await _context.Save();
 
             return CreatedAtAction("GetDriver", new { id = driver.Id }, driver);
         }
@@ -129,7 +129,7 @@ namespace TransportCompanyApp.Controllers
             }
 
             _context.Drivers.Remove(driver);
-            await _context.SaveChangesAsync();
+            await _context.Save(); ;
 
             return driver;
         }
@@ -185,8 +185,8 @@ namespace TransportCompanyApp.Controllers
                     }
                 }
             }
-            var pas = _context.Drivers.Where(b => b.PassportNum == driver.PassportNum).Where(b => b.Id != driver.Id);
-            if (pas.Count() > 0) { ModelState.AddModelError("PassportNum", "Людина з таким номером паспорта вже зареєстрована в базі"); }
+          //  var pas = _context.Drivers.Where(b => b.PassportNum == driver.PassportNum).Where(b => b.Id != driver.Id);
+           // if (pas.Count() > 0) { ModelState.AddModelError("PassportNum", "Людина з таким номером паспорта вже зареєстрована в базі"); }
         }
         public void LicenseValid(Driver driver)
         {
@@ -214,8 +214,8 @@ namespace TransportCompanyApp.Controllers
                     }
                 }
             }
-            var pas = _context.Drivers.Where(b => b.DriverLicenseNum == driver.DriverLicenseNum).Where(b => b.Id != driver.Id);
-            if (pas.Count() > 0) { ModelState.AddModelError("DriverLicenseNum", "Людина з таким номером прав вже зареєстрована в базі"); }
+           // IQueryable<Driver> pas = _context.Drivers.Where(b => b.DriverLicenseNum == driver.DriverLicenseNum).Where(b => b.Id != driver.Id);
+            //if (pas.Count() > 0) { ModelState.AddModelError("DriverLicenseNum", "Людина з таким номером прав вже зареєстрована в базі"); }
         }
         private bool DriverExists(int id)
         {
